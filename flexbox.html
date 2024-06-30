@@ -1,0 +1,204 @@
+<!-- What is Flexbox?
+    CSS Flexible Box Module -> one-dimensional layout model
+    flexible and efficient layouts,distribute space among items,control their alignment
+
+Layout modes
+    Block      ---- for sections in a webpage
+    Inline     ---- for text
+    Table      ---- for two-dimensional table data
+    Positioned ---- for explicit position of an element
+
+Why Flexbox?
+    a lot of flexibility
+    arrange items
+    spacing
+    alignment
+    order of items
+    bootstrap 4 is built on top of the flex layout
+
+Flex Container Properties(apply to parent class)
+    display
+        -flex       ---- make all items into one row.it is block level it apply towards the entire screen.
+        -inline-flex---- it is same as above but it is inline.it apply upto content is found.
+        -block      ---- it will not make any changes. it is default value.\
+
+    flex-direction
+        -row         ---- align items in row wise
+        -row-reverse ---- align items in row wise but reverse order
+        -column      ---- align items in column wise 
+        -column-reverse ---- align items in column wise but reverse order
+
+    flex-wrap --- all items in container will try to fit into single line if there is no enough space 
+    then items are overflow or reduce the browser width the items are shink and overflow. to avoid this flex-wape is used.
+        -wrap  --- when screen width is decreased items will be adjusted and no item will shink and overflow.
+        -nowrap--- it is default value
+        -wrap-reverse--- when screen width is decreased item is move to next line by default but it will go above the items
+
+    flex-flow --- The flex-flow property is a shorthand property for setting both the flex-direction and flex-wrap properties.
+    we should pass first property as flex-direction and second as flex wrap.
+    
+    justify-content --- The justify-content property is used to align the items in container in horizentaly or main axis.
+        -flex-start --- The flex-start value aligns the flex items at the beginning of the container (this is default)
+        -flex-end   --- The flex-end value aligns the flex items at the end of the container
+        -space-around ---The space-around value displays the flex items with space before, between, and after the items
+        -space-between ---The space-between value displays the flex items with space between the items
+        -center ---The center value aligns the items at the center of the container
+        -space-evenly ---same as space-around value displays the items with space before, between, and after the items evenly
+
+
+    align-items --- The align-items property is used to align the items in container in vertically or cross axis.
+        -stretch ---The stretch value stretches the flex items to fill the container (this is default)
+        -center --- The center value aligns the flex items in the middle of the container
+        -flex-start --- The flex-start value aligns the flex items at the beginning of the container
+        -flex-end   --- The flex-end value aligns the flex items at the end of the container
+
+
+Flex Items properties(apply to child class)
+    order --- The order property specifies the order of the flex items.The order value must be a number, default value is 0.
+                <div class="flex-container">
+                    <div style="order: 3">1</div>
+                    <div style="order: 2">2</div>
+                    <div style="order: 4">3</div>
+                    <div style="order: 1">4</div>
+                </div>
+
+
+    flex-grow---The flex-grow property specifies how much a item will grow compare to the rest of the items.
+    The value must be a number, default value is 0.
+
+    Make the third flex item grow eight times faster than the other flex items:
+
+                <div class="flex-container">
+                    <div style="flex-grow: 1">1</div>
+                    <div style="flex-grow: 1">2</div>
+                    <div style="flex-grow: 8">3</div>
+                </div>
+
+    flex-shrink---The flex-shrink property specifies how much a item will shrink compare to the rest of the items.
+    The value must be a number, default value is 1.
+    
+    Do not let the third flex item shrink as much as the other flex items:
+
+                <div class="flex-container">
+                    <div>1</div>
+                    <div>2</div>
+                    <div style="flex-shrink: 0">3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                    <div>8</div>
+                    <div>9</div>
+                    <div>10</div>
+                </div>
+
+
+
+    flex-basis---The flex-basis property specifies the initial length of a flex item.
+
+        Example
+        Set the initial length of the third flex item to 200 pixels:
+                <div class="flex-container">
+                    <div>1</div>
+                    <div>2</div>
+                    <div style="flex-basis: 200px">3</div>
+                    <div>4</div>
+                </div>
+    
+    
+    flex---The flex property is a shorthand property for the flex-grow, flex-shrink, and flex-basis properties.
+
+        Example
+            Make the third flex item not growable (0), not shrinkable (0), and with an initial length of 200 pixels:
+
+                <div class="flex-container">
+                    <div>1</div>
+                    <div>2</div>
+                    <div style="flex: 0 0 200px">3</div>
+                    <div>4</div>
+                </div>
+    
+    align-self---The align-self property specifies the alignment for the selected item inside the flexible container.
+    The align-self property overrides the default alignment set by the container's align-items property.
+
+    Example
+        Align the second flex item at the top of the container, and the third flex item at the bottom of the container:
+
+                <div class="flex-container">
+                    <div>1</div>
+                    <div style="align-self: flex-start">2</div>
+                    <div style="align-self: flex-end">3</div>
+                    <div>4</div>
+                </div>
+
+
+    -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            border: 6px solid black;
+            display: flex;
+
+            flex-direction:column;
+            /* flex-wrap: wrap; */
+            justify-content: center;
+            align-items: center;
+
+    
+        }
+        .flex-item {
+            color: rgb(159, 31, 31);
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        .item-1{
+            background-color: aqua;
+        } 
+        .item-2{
+            background-color: rgb(178, 183, 51);
+        } 
+        .item-3{
+            background-color: rgb(21, 43, 184);
+        } 
+        .item-4{
+            background-color: rgb(201, 141, 29);
+        } 
+        .item-5{
+            background-color: rgb(169, 13, 13);
+        } 
+        .item-6{
+            background-color: rgb(195, 14, 212);
+        } 
+        .item-7{
+            background-color: rgb(164, 211, 23);
+        } 
+        .item-8{
+            background-color: rgb(19, 30, 133);
+        } 
+        .item-9{
+            background-color: rgb(11, 220, 105);
+        } 
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="flex-item item-1">Item-1</div>
+        <div class="flex-item item-2">Item-2</div>
+        <div class="flex-item item-3">Item-3</div>
+        <div class="flex-item item-4">Item-4</div>
+        <div class="flex-item item-5">Item-5</div>
+        <div class="flex-item item-6">Item-6</div>
+        <div class="flex-item item-7">Item-7</div>
+        <div class="flex-item item-8">Item-8</div>
+        <div class="flex-item item-9">Item-9</div>
+        
+    </div>
+</body>
+</html>

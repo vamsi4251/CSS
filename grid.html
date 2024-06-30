@@ -1,0 +1,185 @@
+<!-- Grid Layout---
+The CSS Grid Layout Module offers a grid-based layout system, with rows and columns, making it easier to 
+design web pages without having to use floats and positioning properties.
+
+Grid Container---
+
+    display---
+
+        grid ---- When you set display: grid; on an element, it establishes a grid formatting context for that element, and it creates a block-level grid container.
+        This means the element will behave like a block-level container, occupying the full width of its parent container by default, and its child elements can be placed in grid cells using the grid layout properties
+        
+        inline-grid  ----  When you set display: inline-grid; on an element, it establishes an inline-level grid formatting context, and it creates an inline-level grid container.
+        This means the element will behave like an inline-level container, only taking up as much width as its content requires, and its child elements can be placed in grid cells.  
+
+
+    Grid Gaps --- grid gaps is used to maintain gap between grid items
+
+        column-gap ---- The column-gap property sets the gap between the columns
+        row-gap    ---- The row-gap property sets the gap between the rows
+        gap        ---- The gap property is a shorthand property for the row-gap and the column-gap properties
+
+Properties---
+
+    grid-template-columns --- mainly specify the width of the grid item 
+        The grid-template-columns property specifies the number (and the widths) of columns in a grid layout.
+        The values are a space separated, where each value specifies the size of the respective column.
+
+        syntax---
+            grid-template-columns: none|auto|max-content|min-content|length|initial|inherit;
+
+        Example
+        Make a 4 columns grid container, and specify a size for each column:
+            
+            .grid-container {
+                display: grid;
+                grid-template-columns: 30px 200px auto 100px;
+            }
+
+    grid-template-rows --- mainly specify the height of the grid item
+        The grid-template-rows property specifies the number (and the heights) of the rows in a grid layout.
+        The values are a space-separated, where each value specifies the height of the respective row.
+
+        CSS Syntax --- 
+            grid-template-rows: none|auto|max-content|min-content|length|initial|inherit;
+        
+        Example
+        Make a 4 rows grid container, and specify a size for each column:
+                
+                .grid-container {
+                    display: grid;
+                    grid-template-row: 30px 200px auto 100px;
+                }
+
+    grid-column-start ---- The grid-column-start property defines on which column-line the item will start.
+
+            Example
+                    Make "item1" start on column 2:
+
+                    .item1 {
+                    grid-column-start: 2;
+                    }
+
+    grid-column-end ---- The grid-column-end property defines how many columns an item will span, or on which column-line the item will end
+
+    exemple
+    Make "item1" span 3 columns:
+
+                .item1 {
+                    grid-column-end: span 3;
+                }
+
+    grid-column ---- The grid-column property specifies a grid item's size and location in a grid layout, and is a shorthand property for the following properties:
+
+                grid-column-start
+                grid-column-end
+
+        CSS Syntax:
+            grid-column: grid-column-start / grid-column-end;
+
+        Example
+        You can use column-line values instead numbers of columns to span:
+            
+            .item1 {
+                grid-column: 1 / 3;
+            }
+
+    grid-row-start ---- The grid-row-start property defines on which row-line the item will start.
+
+            Example
+                    Make "item1" start on row 2:
+
+                    .item1 {
+                    grid-row-start: 2;
+                    }
+
+    grid-row-end ---- The grid-row-end property defines how many row an item will span, or on which row-line the item will end
+
+    exemple
+    Make "item1" span 3 rows:
+
+                .item1 {
+                    grid-row-end: span 3;
+                }
+    
+    grid-row ---- The grid-row property specifies a grid item's size and location in a grid layout, and is a shorthand property for the following properties:
+
+                grid-row-start
+                grid-row-end
+
+        CSS Syntax
+                grid-row: grid-row-start / grid-row-end;
+        exemple---
+                Make "item1" start on row 1 and span 2 rows:
+
+                .item1 {
+                    grid-row: 1 / span 2;
+                }
+
+
+    grid-area --- The grid-area property specifies a grid item's size and location to start in a grid layout, and is a shorthand property for the following properties:
+
+                    grid-row-start
+                    grid-column-start
+                    grid-row-end
+                    grid-column-end
+
+        CSS Syntax
+                grid-area: grid-row-start / grid-column-start / grid-row-end / grid-column-end;
+
+        Example
+        Make "item1" start on row 2 column 1, and span 2 rows and 3 columns:
+
+                .item1 {
+                grid-area: 2 / 1 / span 2 / span 3;
+                } -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 100px 200px 100px;
+            gap: 10px;
+
+        }
+        .item1{
+            background-color: blue;
+            grid-column: 1/5;
+        }
+        .item2{
+            background-color: orange;
+            
+        }
+        .item3{
+            background-color: black;
+            grid-row: 2/3;
+            grid-column: 2/4;
+        }
+        .item4{
+            background-color: orange;
+        }
+        .item5{
+            background-color: blue;
+            grid-row: 3/4;
+            grid-column: 1/5;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item1">item-1</div>
+        <div class="item2">item-2</div>
+        <div class="item3">item-3</div>
+        <div class="item4">item-4</div>
+        <div class="item5">item-5</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!-- What are Pseudo-Elements?
+        
+        A CSS pseudo-element is used to style specified parts of an element.
+        
+        For example, it can be used to:
+                Style the first letter, or line, of an element
+                Insert content before, or after, the content of an element
+        Syntax---
+        
+                selector::pseudo-element {
+                    property: value;
+                }
+
+All CSS Pseudo Elements
+        ::first-letter --- Selects the first letter of each element
+        ::first-line --- Selects the first line of each element
+        ::after	--- Insert something after the content 
+        ::before --- Insert something before the content
+        ::marker --- Selects the markers of list items
+        ::selection ---	Selects the portion of an element that is selected by a user
+
+
+::first-line Pseudo-element -----
+
+        The ::first-line pseudo-element is used to add a special style to the first line of a text.
+        The ::first-line pseudo-element can only be applied to block-level elements.
+
+        The following properties apply to the ::first-line pseudo-element:
+
+            font properties
+            color properties
+            background properties
+            word-spacing
+            letter-spacing
+            text-decoration
+            vertical-align
+            text-transform
+            line-height
+            clear
+::first-letter Pseudo-element
+        The ::first-letter pseudo-element is used to add a special style to the first letter of a text.
+        The ::first-letter pseudo-element can only be applied to block-level elements.
+
+        The following properties apply to the ::first-letter pseudo- element: 
+
+            font properties
+            color properties 
+            background properties
+            margin properties
+            padding properties
+            border properties
+            text-decoration
+            vertical-align (only if "float" is "none")
+            text-transform
+            line-height
+            float
+
+::before Pseudo-element
+        The ::before pseudo-element can be used to insert some content before the content of an element.
+
+::after Pseudo-element
+        The ::after pseudo-element can be used to insert some content after the content of an element.
+
+::marker Pseudo-element
+        The ::marker pseudo-element selects the markers of list items.
+
+::selection Pseudo-element
+        The ::selection pseudo-element matches the portion of an element that is selected by a user.
+        The following CSS properties can be applied to ::selection: color, background, cursor, and outline. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pseudo-element</title>
+    <style>
+        /* h3::first-letter{
+            text-transform: uppercase;
+            color: red;
+        } */
+
+        /* .ele::first-line{
+            color: blue;
+            font-size: xx-large;
+        } */
+
+        /* .ele::before{
+            content: "before property is used ";
+            color: blue;
+        } */
+        /* .ele::after{
+            content: "after property is used ";
+            color: re;
+        } */
+
+        h3::selection{
+            background-color: orange;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h3 class="ele">this is heading three</h3>
+    <h3>this is heading three</h3>
+    <h3>this is heading three</h3>
+    <h3>this is heading three</h3>
+    <h3>this is heading three</h3>
+</body>
+</html>

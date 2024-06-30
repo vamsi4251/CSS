@@ -1,0 +1,60 @@
+<!-- CSS Box Sizing---
+    The CSS box-sizing property allows us to include the padding and border in an element's total width and height.
+
+    Without the CSS box-sizing Property
+        By default, the width and height of an element is calculated like this:
+
+        width + padding + border = actual width of an element
+        height + padding + border = actual height of an element
+
+        This means: When you set the width/height of an element, the element often appears bigger than you have set
+        (because the element's border and padding are added to the element's specified width/height).
+
+    CSS Syntax
+        box-sizing: content-box|border-box|initial|inherit;
+
+    content-box ---	Default
+        The width and height properties (and min/max properties) includes only the content.
+        Border and padding are not included	
+    border-box --- 
+        The width and height properties (and min/max properties) includes content, padding and border	
+    initial ---	
+        Sets this property to its default value.	
+    inherit ---
+        Inherits this property from its parent element -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box-sizing</title>
+    <style>
+        .content-box{
+            height: 100px;
+            width: 150px;
+            background-color: blue;
+            border: 10px solid black;
+            padding: 10px;
+            box-sizing: content-box;
+        }
+        .border-box{
+            height: 100px;
+            width: 150px;
+            background-color: orange;
+            border: 10px solid black;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-box" >
+        <p>this id content box</p>
+    </div><br>
+    <div class="border-box">
+        <p>this is border-box</p>
+
+    </div>
+</body>
+</html>

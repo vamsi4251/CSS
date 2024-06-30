@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        .animi{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            border-radius: 50%;
+            background-color: orange;
+            animation: move 3s 3;
+        }
+        @keyframes move{
+            0%{
+                background-color: orange;
+                top: 0;
+                left: 0;
+            }
+            25%{
+                top: 0;
+                left: 93%;
+            }
+            50%{
+                top: 87%;
+                left: 0;
+            }
+            75%{
+                top: 87%;
+                left: 93%;
+            }
+            100%{
+                top: 0;
+                left: 0;
+                background-color: red;
+            }
+        }
+    </style>
+</head>
+<body style="background-color: black;">
+    <div class="animi"></div>
+</body>
+</html>

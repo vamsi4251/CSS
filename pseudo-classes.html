@@ -1,0 +1,113 @@
+What are Pseudo-classes?
+        A pseudo-class is used to define a special state of an element.
+
+        For example, it can be used to:
+            Style an element when a user mouses over it
+            Style visited and unvisited links differently
+            Style an element when it gets focus
+        
+        Syntax
+            selector:pseudo-class {
+                property: value;
+            }
+
+    :hover Selector --- 
+        The :hover selector is used to select elements when you mouse over them.
+        The :hover selector can be used on all elements, not only on links.
+        :hover MUST come after :link and :visited (if they are present) in the CSS definition, in order to be effective!
+        
+        CSS Syntax
+            :hover {
+                css declarations;
+            }
+
+    :link Selector ---
+            The :link selector is used to select unvisited links.
+            Note: The :link selector does not style links you have already visited.
+            
+            CSS Syntax
+                :link {
+                    css declarations;
+                }
+    :visited Selector ---
+            The :visited selector is used to select visited links.
+
+            Tip: Use the :link selector to style links to unvisited pages, the :hover selector to style links when you mouse over them, and the :active selector to style links when you click on them.
+
+            Browsers limits the styles that can be set for a:visited links, due to security issues.
+
+    :active Selector  ---
+            The :active selector is used to select and style the active link.
+
+            A link becomes active when you click on it.
+        
+            Tip: The :active selector can be used on all elements, not only links.
+        
+            Tip: Use the :link selector to style links to unvisited pages, the :visited selector to style links to visited pages, and the :hover selector to style links when you mouse over them.
+        
+            Note: :active MUST come after :hover (if present) in the CSS definition in order to be effective!
+    
+    :target Selector ---
+            URLs with an # followed by an anchor name link to a certain element within a document. The element being linked to is the target element.
+
+            The :target selector can be used to style the current active target element.
+
+    :focus Selector ---
+            The :focus selector is used to select the element that has focus.
+            Tip: The :focus selector is allowed on elements that accept keyboard events or other user inputs.
+
+    :required Selector ---
+            The :required selector selects form elements which are required.
+
+            Form elements with a required attribute are defined as required.
+
+            Note: The :required selector only applies to the form elements: input, select and textarea.
+
+    :optional Selector ---
+            The :optional selector selects form elements which are optional.
+
+            Form elements with no required attribute are defined as optional.
+
+            Note: The :optional selector only applies to the form elements: input, select and textarea.
+
+    :read-only Selector ---
+
+            The :read-only selector selects elements which are "readonly".
+
+            Form elements with a "readonly" attribute are defined as "readonly".
+
+    :read-write Selector ---
+            The :read-write selector selects form elements which are "readable" and "writeable".
+            Form elements with no "readonly" attribute, and no "disabled" attribute are defined as "read-" and "write-able".
+
+    :valid Selector ---
+            The :valid selector selects form elements with a value that validates according to the element's settings.
+
+            Note: The :valid selector only works for form elements with limitations, such as input elements with min and max attributes, email fields with a legal email, or number fields with a numeric value, etc.
+
+    :invalid Selector ---
+            The :invalid selector selects form elements with a value that does not validate according to the element's settings.
+
+            Note: The :invalid selector only works for form elements with limitations, such as input elements with min and max attributes, email fields without a legal email, or number fields without a numeric value, etc.
+
+    :disabled Selector --- 
+
+            The :disabled selector matches every disabled element (mostly used on form elements).
+
+    :checked Selector ---
+
+            The :checked selector matches every checked <input> element (only for radio buttons and checkboxes) and <option> element.
+                
+    :in-range Selector ---
+
+            The :in-range selector selects all elements with a value that is within a specified range.
+
+            Note: The :in-range selector only works for input elements with min and/or max attributes!
+
+    :out-of-range Selector ---
+            The :out-of-range selector selects all elements with a value that is outside a specified range.
+
+            Note: The :out-of-range selector only works for input elements with min and/or max attributes!
+
+    :enabled Selector ---
+            The :enabled selector matches every enabled element (mostly used on form elements).

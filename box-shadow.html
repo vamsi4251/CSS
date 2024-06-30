@@ -1,0 +1,41 @@
+<!-- CSS box-shadow Property ----
+
+        The box-shadow property attaches one or more shadows to an element.
+
+    CSS Syntax
+        box-shadow: h-offset v-offset blur spread color 
+
+    Property Values ---
+        
+        h-offset --- Required. The horizontal offset of the shadow. A positive value puts the shadow on the right side 
+                    of the box, a negative value puts the shadow on the left side of the box	
+        v-offset --- Required. The vertical offset of the shadow. A positive value puts the shadow below the box,
+                    a negative value puts the shadow above the box	
+        blur	 --- Optional. The blur radius. The higher the number, the more blurred the shadow will be	
+        spread	 --- Optional. The spread radius. A positive value increases the size of the shadow,
+                    a negative value decreases the size of the shadow	
+        color	 --- Optional. The color of the shadow. The default value is the text color. Look at CSS Color
+                    Values for a complete list of possible color values. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box-shadow</title>
+    <style>
+        .shadow{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            box-shadow: 10px 10px 10px 2px burlywood;
+        }
+    </style>
+</head>
+<body>
+    <div class="shadow">
+
+    </div>
+</body>
+</html>
