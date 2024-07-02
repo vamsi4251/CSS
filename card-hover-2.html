@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card Hover</title>
+    <style>
+        body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: grey;
+        gap: 10px;
+        }
+        .card {
+        height: 150px;
+        width: 150px;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 0 0 10px black;
+        transition: 0.5s;
+        }
+        .card img {
+        height: 150px;
+        width: 150px;
+        object-fit: cover;
+        }
+        .card:not(:hover) {
+        filter: grayscale(100%);
+        }
+        .card:hover {
+        transform: scale(1.07);
+        }
+
+    </style>
+  </head>
+  <body>
+    <div class="card"><img src="https://images.pexels.com/photos/1603650/pexels-photo-1603650.jpeg?auto=compress&cs=tinysrgb&w=600" alt="infosys" /></div>
+    <div class="card"><img src="https://images.pexels.com/photos/1603650/pexels-photo-1603650.jpeg?auto=compress&cs=tinysrgb&w=600" alt="apple" /></div>
+    <div class="card"><img src="https://images.pexels.com/photos/1603650/pexels-photo-1603650.jpeg?auto=compress&cs=tinysrgb&w=600" alt="tcs" /></div>
+  </body>
+</html>
